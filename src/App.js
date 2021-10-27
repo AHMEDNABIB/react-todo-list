@@ -43,8 +43,18 @@ class App extends Component {
       <div className="row">
        <div className ="mx-auto mt-5 col-10 col-md-8">
         <h3 className="text-center text-capatalize">todo input</h3>
-         <TodoInput/>
-         <TodoList/>  
+         <TodoInput 
+           item={this.state.item}
+           handleChange={this.handleChange}
+           handleSubmit={this.handleSubmit}
+           editItem={this.state.editItem}
+         />
+         <TodoList
+           items={this.state.items}
+           clearList={this.clearList}
+           handleEdit={this.handleEdit}
+           handleDelete={this.handleDelete}
+         />  
        </div>
        
       </div>
