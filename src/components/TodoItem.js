@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { v4 as uuidv4 } from 'uuid';
-uuidv4(); 
+
 
  class TodoItem extends Component {
     render() {
@@ -9,7 +8,7 @@ uuidv4();
                 <div className='container'>
                     <div className="row">
                         <div className="col-4 bg-danger">
-                            
+                            <p>now is the time</p>
                         </div>
                     </div>
                 </div>
