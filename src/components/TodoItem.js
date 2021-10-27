@@ -7,7 +7,7 @@ import React, { Component } from 'react'
             <div>
                 <div className='container'>
                     <div className="row">
-                        <div className="col-4 bg-danger">
+                        <div className="col-4 ">
                             <p>now is the time</p>
                         </div>
                     </div>

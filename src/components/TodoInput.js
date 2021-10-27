@@ -4,10 +4,10 @@ import TodoItem from './TodoItem';
 
 class TodoInput extends Component {
     render() {
-        const{item, handleChange,handSubmit ,editItem} = this.props;
+        const{item, handleChange,handleSubmit ,editItem} = this.props;
         return (
             <div className ="my-3 card card-body">
-              <form >
+              <form onSubmit={handleSubmit}>
                   <div className="input-group">
                       <div className="input-group-prepend">
                           <div className="text-white input-group-text bg-primary">
