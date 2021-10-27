@@ -34,22 +34,32 @@ class App extends Component {
      items: updateItems,
      item:'',
      id:uuidv4(),
-     editing:false
-   },
-   ()=> console.log(this.state)
-   )
+     editItem:false
+   })
   }
 
-  clearList = (e)=>{
-    console.log('clear list')
+  clearList = ()=>{
+   this.setState({
+     items: []
+   })
   }
 
   handleEdit= (id)=>{
-    console.log(`handle edit ${id}`)
+    const filteredItems =this.state.items.filter(item => item.id !== id);
+    const selectedItem = this.state.items.find(item => item.id=== id);
+    this.setState({
+      items: filteredItems,
+      item:selectedItem.title,
+      id:id,
+      editItem:true
+    })
   }
 
   handleDelete= (id)=>{
-    console.log(`handle delete ${id}`)
+    const filteredItems =this.state.items.filter(item => item.id !== id);
+    this.setState({
+      items: filteredItems
+    })
   }
   
   render() { 
@@ -59,7 +69,7 @@ class App extends Component {
       <div className="container">
       <div className="row">
        <div className ="mx-auto mt-5 col-10 col-md-8">
-        <h3 className="text-center text-capatalize">todo input</h3>
+        <h3 className="text-center text-capatalize">Todo Input</h3>
          <TodoInput 
            item={this.state.item}
            handleChange={this.handleChange}
